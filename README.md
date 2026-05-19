@@ -1,77 +1,75 @@
-# Stroke Prediction Binary Classification Project
+# Stroke Prediction — Binary Classification
 
-## Project Overview
+Predicts stroke risk from patient health and lifestyle data using multiple classical ML algorithms. Models are compared across accuracy, precision, recall, and F1-score.
 
-The Stroke Prediction Binary Classification project aims to develop a machine learning model that predicts the likelihood of a stroke occurring in patients based on various health and lifestyle factors. This project utilizes a binary classification approach, where the output indicates whether a patient is at risk of having a stroke (1) or not (0).
+## Task
 
-## Objectives
+Given a patient's health profile, predict whether they are at risk of having a stroke (binary: 0 = No stroke, 1 = Stroke).
 
-### Data Analysis and Preprocessing
-- Analyze and preprocess health-related data to prepare it for modeling.
-- Handle missing values and encode categorical variables.
+## Dataset Features
 
-### Model Implementation
-- Implement various machine learning algorithms to classify stroke risk.
-- Compare the performance of different models using appropriate metrics.
+| Feature | Description |
+|---------|-------------|
+| Age | Patient age |
+| Hypertension | 0 or 1 |
+| Heart Disease | 0 or 1 |
+| Marital Status | Ever married |
+| Work Type | Private / Self-employed / Govt / Children / Never worked |
+| Residence Type | Urban / Rural |
+| Avg Glucose Level | Blood glucose (mg/dL) |
+| BMI | Body mass index |
+| Smoking Status | Formerly smoked / Never / Smokes / Unknown |
 
-### Evaluation
-- Evaluate and compare the performance of different models using appropriate metrics.
-- Assess the accuracy, precision, recall, and F1-score of trained models.
+## Models Compared
 
-## Dataset
+| Model | Notes |
+|-------|-------|
+| Logistic Regression | Baseline linear classifier |
+| Random Forest | Ensemble, handles class imbalance well |
+| Support Vector Machine | RBF kernel |
+| K-Nearest Neighbors | Distance-based |
+| Decision Tree | Interpretable, prone to overfitting |
 
-The project uses a dataset that includes features such as:
+Evaluation metrics: **Accuracy · Precision · Recall · F1-Score**
 
-- Age
-- Hypertension
-- Heart Disease
-- Marital Status
-- Work Type
-- Residence Type
-- Average Glucose Level
-- Body Mass Index (BMI)
-- Smoking Status
+## Methodology
 
-## Technologies Used
+- **Preprocessing**: Missing value imputation (BMI), categorical encoding, feature scaling
+- **Split**: Stratified train/test split to preserve class imbalance ratio
+- **Imbalance handling**: Class weighting / SMOTE where applicable
+- **Visualization**: Correlation heatmaps, feature importance, ROC curves, confusion matrices
 
-### Programming Language
-- Python
+## Stack
 
-### Libraries
-- Pandas: for data manipulation
-- NumPy: for numerical operations
-- Scikit-learn: for machine learning algorithms and evaluation metrics
-- Matplotlib and Seaborn: for data visualization
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
 
-## Installation
+`scikit-learn` · `pandas` · `numpy` · `matplotlib` · `seaborn`
 
-To set up the project, follow these steps:
+## Project Structure
 
-1. Clone the repository:
+```
+Stroke-Prediction-Binary-Classification/
+├── Stroke_Prediction_Binary_Classification.ipynb   # Full pipeline
+└── README.md
+```
 
-git clone [<repository-url>](https://github.com/kaltisami/Stroke-Prediction-Binary-Classification.git)
+## Getting Started
 
-2. Navigate to the project directory:
-
+```bash
+git clone https://github.com/kaltisami/Stroke-Prediction-Binary-Classification.git
 cd Stroke-Prediction-Binary-Classification
+pip install scikit-learn pandas numpy matplotlib seaborn
+```
 
+Open the notebook in Jupyter or Google Colab and run all cells.
 
-## Usage
+## Related Projects
 
-1. Load the dataset using the provided Jupyter Notebook.
-2. Explore and preprocess the data (handling missing values, encoding categorical variables).
-3. Split the dataset into training and testing sets.
-4. Train various classification models (e.g., Logistic Regression, Random Forest, Support Vector Machine).
-5. Evaluate model performance using metrics such as accuracy, precision, recall, and F1-score.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+- [chest-xray-ai-diagnosis](https://github.com/kaltisami/chest-xray-ai-diagnosis) — production-grade chest X-ray analysis platform
+- [Parkinson-s-Disease-CT-Brain-Images-Classification](https://github.com/kaltisami/Parkinson-s-Disease-CT-Brain-Images-Classification) — CT brain image classification with DenseNet121
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-Thanks to all contributors and resources that made this project possible.
+MIT
